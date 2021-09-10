@@ -5,10 +5,14 @@ namespace Assignment1
 {
     public static class Iterators
     {
+    
+        
         public static IEnumerable<T> Flatten<T>(IEnumerable<IEnumerable<T>> items)
         {
-            foreach(var item in items) {
-                foreach(var t in item) {
+            foreach (var item in items)
+            {
+                foreach (var t in item)
+                {
                     yield return t;
                 }
             }
@@ -16,8 +20,10 @@ namespace Assignment1
 
         public static IEnumerable<T> Filter<T>(IEnumerable<T> items, Predicate<T> predicate)
         {
-            foreach(var t in items) {
-                if (predicate(t)) {
+            foreach (var t in items)
+            {
+                if (predicate(t))
+                {
                     yield return t;
                 }
             }
