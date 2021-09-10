@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Assignment1.Tests
 {
-    public class IteratorsTests
+    public class Given_stream_of_T_return_Stream_T
     {
         [Fact]
         public void flatten_return_yield_returns_1_2_3_4_5_3times()
