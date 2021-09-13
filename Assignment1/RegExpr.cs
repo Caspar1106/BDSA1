@@ -8,20 +8,26 @@ namespace Assignment1
     {
         public static IEnumerable<string> SplitLine(IEnumerable<string> lines)
         {
-        string pattern = @"[a-zA-Z0-9]+";
-        foreach(var line in lines) {
-            string input = line;
-            foreach (Match m in Regex.Matches(input, pattern))
-        {
-            yield return m.ToString();
-        }
-        }
+            string pattern = @"[a-zA-Z0-9]+";
+            foreach (var line in lines)
+            {
+                string input = line;
+                foreach (Match m in Regex.Matches(input, pattern))
+                {
+                    yield return m.ToString();
+                }
+            }
 
         }
 
         public static IEnumerable<(int width, int height)> Resolution(string resolutions)
         {
-            throw new NotImplementedException();
+            string pattern = @"(\d{3,4})x(\d{3,4})"; foreach (Match m in Regex.Matches(resolutions, pattern))
+            {
+                var width = Int32.Parse(m.Groups[1].ToString()); 
+                var height = Int32.Parse(m.Groups[2].ToString());
+                yield return (width, height);
+            }
         }
 
         public static IEnumerable<string> InnerText(string html, string tag)
