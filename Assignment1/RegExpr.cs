@@ -33,7 +33,13 @@ namespace Assignment1
 
         public static IEnumerable<string> InnerText(string html, string tag)
         {
-            throw new NotImplementedException();
+            string pattern = @".*<" + @tag + @".*> (.*)\</" + @tag + @">.*";
+
+            foreach (Match m in Regex.Matches(html, pattern))
+            {
+                yield return m.Groups[1].Value.Trim();
+            }
+
         }
     }
 }
