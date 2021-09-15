@@ -25,10 +25,7 @@ namespace Assignment1.Tests
             Predicate<int> even = Even;
             var input = new List<int>() { 1, 2, 3, 4, 5, 6 };
             var output = Assignment1.Iterators.Filter<int>(input, even);
-
             Assert.Equal(new List<int>() { 2, 4, 6 }, output);
-
-
         }
 
         public static bool Even(int i)
